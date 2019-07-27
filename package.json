@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
@@ -28,7 +31,13 @@
       "last 1 safari version"
     ]
   },
+  "peerDependencies": {
+    "styled-components": "> 4.3.2",
+    "prop-types": "> 15.7.2"
+  },
   "devDependencies": {
-    "react-styleguidist": "^9.1.11"
+    "prop-types": "^15.7.2",
+    "react-styleguidist": "^9.1.11",
+    "styled-components": "^4.3.2"
   }
 }
