@@ -3,31 +3,26 @@ node_js:
   - "10"
 stages:
   # Running tests on all branches
-  - name: test
-    if: (NOT type IN (pull_request))
-
-  # Running build in test environments without deployment
-  - name: build
-    if: (NOT type IN (pull_request))
+  - name: test/build
+    if: (NOT type IN (pull_request)) AND (NOT branch = master)
 
   # Deployment
-  - name: deploy
-    if: (NOT type IN (pull_request)) AND (branch = staging)
+  - name: test/build/deploy
+    if: (NOT type IN (pull_request)) AND (branch = master)
 jobs:
   include:
     # Run tests with coverage
     - stage: test
       script:
         - npm run test -- --coverage
-
-    # Build the application
-    - stage: build
-      script:
         - npm run build
 
     # Build and deploy to production
     - stage: deploy
-      script: SFTP_USER=${SFTP_USER} SFTP_PASS=${SFTP_PASS} SFTP_HOST=${SFTP_HOST} npm run deploy
+      script:
+        - npm run test -- --coverage
+        - npm run build
+        - SFTP_USER=${SFTP_USER} SFTP_PASS=${SFTP_PASS} SFTP_HOST=${SFTP_HOST} npm run deploy
 notifications:
   email:
     on_success: never
