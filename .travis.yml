@@ -1,0 +1,34 @@
+language: node_js
+node_js:
+  - "10"
+stages:
+  # Running tests on all branches
+  - name: test
+    if: (NOT type IN (pull_request))
+
+  # Running build in test environments without deployment
+  - name: build
+    if: (NOT type IN (pull_request))
+
+  # Deployment
+  - name: deploy
+    if: (NOT type IN (pull_request)) AND (branch = staging)
+jobs:
+  include:
+    # Run tests with coverage
+    - stage: test
+      script:
+        - npm run test -- --coverage
+
+    # Build the application
+    - stage: build
+      script:
+        - npm run build
+
+    # Build and deploy to production
+    - stage: deploy
+      script: SFTP_USER=${SFTP_USER} SFTP_PASS=${SFTP_PASS} SFTP_HOST=${SFTP_HOST} npm run deploy
+notifications:
+  email:
+    on_success: never
+    on_failure: change

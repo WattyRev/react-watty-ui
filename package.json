@@ -14,7 +14,8 @@
     "start": "npx styleguidist server",
     "build": "npx styleguidist build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "echo 'not done yet'"
   },
   "eslintConfig": {
     "extends": "react-app"
