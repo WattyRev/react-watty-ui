@@ -61,6 +61,7 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "react-styleguidist": "^9.1.11",
+    "ssh2-sftp-client": "^2.4.3",
     "styled-components": "^4.3.2"
   }
 }
