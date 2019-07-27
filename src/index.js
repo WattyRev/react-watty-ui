@@ -32,8 +32,6 @@ import Tooltip from "./components/Tooltip/Tooltip";
 const Theme = { colors, media, patterns };
 export default Theme;
 
-console.log(TYPOGRAPHY_STYLES);
-
 export {
   A,
   Alert,

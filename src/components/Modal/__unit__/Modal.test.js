@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import theme from "../../theme";
+import theme from "../../../index";
 import Modal, { StyledModal } from "../Modal";
 
 describe("Modal", () => {
@@ -26,10 +26,12 @@ describe("Modal", () => {
     expect(wrapper.find(".testing_backdrop")).toHaveLength(1);
     expect(wrapper.find(".testing_modal")).toHaveLength(1);
   });
-  it("displays the modalContent inside the modal", () => {
+  it("displays the children inside the modal", () => {
     expect.assertions(1);
     const wrapper = shallow(
-      <Modal isOpen modalContent={<div className="target" />} />
+      <Modal isOpen>
+        <div className="target" />
+      </Modal>
     );
     expect(wrapper.find(".testing_modal").find(".target")).toHaveLength(1);
   });

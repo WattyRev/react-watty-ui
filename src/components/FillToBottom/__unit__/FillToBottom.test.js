@@ -1,10 +1,10 @@
 import React from "react";
 import { mount } from "enzyme";
-import Theme from "../../theme";
-import * as Util from "../../utils";
+import Theme from "../../../index";
+import * as Util from "../../../utils";
 import FillToBottom, { StyleWrapper } from "../FillToBottom";
 
-jest.mock("../../utils");
+jest.mock("../../../utils");
 
 describe("FillToBottom", () => {
   describe("StyleWrapper", () => {

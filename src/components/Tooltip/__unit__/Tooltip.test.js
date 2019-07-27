@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import Theme from "../../theme";
-import { setupFontAwesome } from "../Icon";
+import Theme from "../../../index";
+import { setupFontAwesome } from "../../Icon/FontAwesome";
 import Tooltip, {
   StyleWrapper,
   TooltipIcon,

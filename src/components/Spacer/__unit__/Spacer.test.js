@@ -1,6 +1,6 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import theme from "../../theme";
+import theme from "../../../index";
 import Spacer, { StyledSpacer } from "../Spacer";
 
 describe("Spacer", () => {

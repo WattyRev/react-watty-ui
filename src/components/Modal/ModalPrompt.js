@@ -121,13 +121,13 @@ class ModalPrompt extends React.Component {
       <React.Fragment>
         {this.props.children(data)}
         <Modal isOpen={this.state.isOpen} onBackdropClick={this.handleCancel}>
-          <StyleWrapper className="testing_modal">
-            <form onSubmit={this.handleSubmit} className="testing_submit">
+          <StyleWrapper>
+            <form onSubmit={this.handleSubmit} data-test-id="submit">
               <Label>{this.props.message}</Label>
               <Input
                 type={this.props.inputType}
                 ref={input => (this.promptInput = input)}
-                className="testing_prompt-value"
+                data-test-id="prompt-value"
                 value={this.state.value}
                 onChange={this.handleValueChange}
               />
@@ -137,7 +137,7 @@ class ModalPrompt extends React.Component {
                 </Button>{" "}
                 <Button
                   type="button"
-                  className="testing_cancel"
+                  data-test-id="cancel"
                   onClick={this.handleCancel}
                 >
                   {this.props.cancelText}

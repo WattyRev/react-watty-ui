@@ -43,9 +43,7 @@ describe("ModalConfirm", () => {
       </ModalConfirm>
     );
     wrapper.find(".target").simulate("click");
-    shallow(<div>{wrapper.find(Modal).prop("modalContent")}</div>)
-      .find(".testing_cancel")
-      .simulate("click");
+    wrapper.find('[data-test-id="cancel"]').simulate("click");
     expect(wrapper.find(Modal).prop("isOpen")).toEqual(false);
   });
   it("triggers onCancel when clicking on the cancel button", () => {
@@ -61,9 +59,7 @@ describe("ModalConfirm", () => {
       </ModalConfirm>
     );
     wrapper.find(".target").simulate("click");
-    shallow(<div>{wrapper.find(Modal).prop("modalContent")}</div>)
-      .find(".testing_cancel")
-      .simulate("click");
+    wrapper.find('[data-test-id="cancel"]').simulate("click");
     expect(defaultProps.onCancel).toHaveBeenCalled();
   });
   it("closes the modal when clicking on the confirm button", () => {
@@ -78,9 +74,7 @@ describe("ModalConfirm", () => {
       </ModalConfirm>
     );
     wrapper.find(".target").simulate("click");
-    shallow(<div>{wrapper.find(Modal).prop("modalContent")}</div>)
-      .find(".testing_confirm")
-      .simulate("click");
+    wrapper.find('[data-test-id="confirm"]').simulate("click");
     expect(wrapper.find(Modal).prop("isOpen")).toEqual(false);
   });
   it("triggers onConfirm when clicking on the confirm button", () => {
@@ -95,9 +89,7 @@ describe("ModalConfirm", () => {
       </ModalConfirm>
     );
     wrapper.find(".target").simulate("click");
-    shallow(<div>{wrapper.find(Modal).prop("modalContent")}</div>)
-      .find(".testing_confirm")
-      .simulate("click");
+    wrapper.find('[data-test-id="confirm"]').simulate("click");
     expect(defaultProps.onConfirm).toHaveBeenCalled();
   });
   it("closes the modal when clicking on the backdrop", () => {

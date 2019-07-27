@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import Theme from "../../theme";
+import Theme from "../../../index";
 import Button from "../Button";
 
 describe("Button", () => {

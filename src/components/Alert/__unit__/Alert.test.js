@@ -2,7 +2,7 @@
 
 import React from "react";
 import { mount, shallow } from "enzyme";
-import theme from "../../theme";
+import theme from "../../../index";
 import Alert, { success, warn, error, StyledAlert } from "../Alert";
 
 describe("Alert", () => {

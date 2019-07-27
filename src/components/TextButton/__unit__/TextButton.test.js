@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import Theme from "../../theme";
+import Theme from "../../../index";
 import TextButton from "../TextButton";
 
 describe("TextButton", () => {

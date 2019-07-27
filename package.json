@@ -31,11 +31,31 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/setupTests.js",
+      "!src/**/*.test.js"
+    ]
+  },
   "peerDependencies": {
     "styled-components": "> 4.3.2",
     "prop-types": "> 15.7.2"
   },
   "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest-environment-enzyme": "^7.0.2",
+    "jest-enzyme": "^7.0.2",
+    "jest-styled-components": "^6.3.3",
     "prop-types": "^15.7.2",
     "react-styleguidist": "^9.1.11",
     "styled-components": "^4.3.2"

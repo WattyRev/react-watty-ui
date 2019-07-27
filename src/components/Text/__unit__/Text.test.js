@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import Theme from "../../theme";
+import Theme from "../../../index";
 import Text from "../Text";
 
 describe("Text", () => {

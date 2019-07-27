@@ -1,6 +1,6 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import Theme from "../../theme";
+import Theme from "../../../index";
 import Modal from "../Modal";
 import ModalPrompt, { StyleWrapper } from "../ModalPrompt";
 
@@ -25,7 +25,7 @@ describe("ModelPrompt", () => {
         {modal => <div className="target" onClick={modal.actions.open} />}
       </ModalPrompt>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toBeDefined();
   });
   it("does not display the modal by default", () => {
     expect.assertions(1);
@@ -65,11 +65,8 @@ describe("ModelPrompt", () => {
         )}
       </ModalPrompt>
     );
-    const modalWrapper = shallow(
-      <div>{wrapper.find(Modal).prop("modalContent")}</div>
-    );
     wrapper.find(".target").simulate("click");
-    modalWrapper.find(".testing_cancel").simulate("click");
+    wrapper.find('[data-test-id="cancel"]').simulate("click");
     expect(wrapper.find(".target").text()).toEqual("closed");
   });
   it("Closes the modal when clicking on the backdrop", () => {
@@ -98,16 +95,13 @@ describe("ModelPrompt", () => {
         )}
       </ModalPrompt>
     );
-    const modalWrapper = shallow(
-      <div>{wrapper.find(Modal).prop("modalContent")}</div>
-    );
     wrapper.find(".target").simulate("click");
-    modalWrapper.find(".testing_prompt-value").simulate("change", {
+    wrapper.find('[data-test-id="prompt-value"]').simulate("change", {
       target: {
         value: "boogers"
       }
     });
-    modalWrapper.find(".testing_submit").simulate("submit", {
+    wrapper.find('[data-test-id="submit"]').simulate("submit", {
       preventDefault: jest.fn()
     });
     expect(defaultProps.onSubmit).toHaveBeenCalled();

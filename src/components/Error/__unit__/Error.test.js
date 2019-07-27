@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
-import Theme from "../../theme";
-import { setupFontAwesome } from "../Icon";
+import Theme from "../../../index";
+import { setupFontAwesome } from "../../Icon/FontAwesome";
 import Error from "../Error";
 
 describe("Error", () => {

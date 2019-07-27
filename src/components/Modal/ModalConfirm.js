@@ -95,13 +95,13 @@ class ModalConfirm extends React.Component {
             <div className="buttons">
               <Button
                 isPrimary
-                className="testing_confirm"
+                data-test-id="confirm"
                 onClick={this.handleConfirm}
               >
                 {this.props.confirmText}
               </Button>{" "}
               <Button
-                className="testing_cancel"
+                data-test-id="cancel"
                 type="button"
                 onClick={this.handleCancel}
               >
