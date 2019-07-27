@@ -12,13 +12,13 @@ stages:
 jobs:
   include:
     # Run tests with coverage
-    - stage: test
+    - stage: test/build
       script:
         - npm run test -- --coverage
         - npm run build
 
     # Build and deploy to production
-    - stage: deploy
+    - stage: test/build/deploy
       script:
         - npm run test -- --coverage
         - npm run build

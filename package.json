@@ -12,7 +12,7 @@
     "build": "npx styleguidist build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "echo 'not done yet'"
+    "deploy": "npm run build && SFTP_PATH=./public_html/react-watty-ui/ node sftp-deployment.js"
   },
   "eslintConfig": {
     "extends": "react-app"
