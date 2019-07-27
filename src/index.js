@@ -11,8 +11,7 @@ import FillToBottom from "./components/FillToBottom/FillToBottom";
 import H1 from "./components/Text/H1";
 import H2 from "./components/Text/H2";
 import H3 from "./components/Text/H3";
-import Icon, { ICON_NAMES } from "./components/Icon/Icon";
-import FontAwesome from "./components/Icon/FontAwesome";
+import Icon, { ICON_NAMES, setupFontAwesome } from "./components/Icon/Icon";
 import Input from "./components/Input/Input";
 import Label from "./components/Text/Label";
 import Loading from "./components/Loading/Loading";
@@ -27,7 +26,7 @@ import Spacer from "./components/Spacer/Spacer";
 import Text, { TYPOGRAPHY_STYLES } from "./components/Text/Text";
 import TextButton from "./components/TextButton/TextButton";
 import Tile from "./components/Tile/Tile";
-import Tooltip from "./components/Tooltip/Tooltip";
+// import Tooltip from "./components/Tooltip/Tooltip";
 
 const Theme = { colors, media, patterns };
 export default Theme;
@@ -48,7 +47,7 @@ export {
   H3,
   Icon,
   ICON_NAMES,
-  FontAwesome,
+  setupFontAwesome,
   Input,
   Label,
   Loading,
@@ -63,6 +62,6 @@ export {
   Text,
   TYPOGRAPHY_STYLES,
   TextButton,
-  Tile,
-  Tooltip
+  Tile
+  // Tooltip
 };

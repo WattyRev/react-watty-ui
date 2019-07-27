@@ -54,15 +54,6 @@ export const Spacer = styled.div`
 /**
  * Wraps the provided children in a ralative container and allows for opening and closing an
  * absolutely positionined dropdown.
- *
- * Example:
- * ```
- * <Dropdown
- *   dropdownContent={dropdownData => <a onClick={dropdownData.actions.close}>Close</a>}
- * >
- *   {dropdownData => <a onClick={dropdownData.actions.open}>Open</a>}
- * </Dropdown>
- * ```
  */
 class Dropdown extends React.Component {
   static propTypes = {

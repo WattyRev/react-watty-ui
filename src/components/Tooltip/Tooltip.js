@@ -61,7 +61,7 @@ export const StyleWrapper = styled.div`
   }
 `;
 
-export const TooltipIcon = styled(Icon)`
+export const TooltipIcon = styled.div`
   border: 1px solid ${props => props.theme.colors.gray};
   color: gray;
   border-radius: 50%;
@@ -165,10 +165,11 @@ class Tooltip extends React.Component {
     return (
       <React.Fragment>
         <TooltipIcon
-          icon="info"
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
-        />
+        >
+          <Icon icon="info" />
+        </TooltipIcon>
         {this.state.renderTooltip && (
           <BodyPortal>
             <StyleWrapper

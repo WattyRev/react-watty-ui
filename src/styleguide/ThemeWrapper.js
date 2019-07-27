@@ -1,12 +1,12 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import theme, { FontAwesome } from "../index";
+import theme, { setupFontAwesome } from "../index";
 
 export default class ThemeWrapper extends React.Component {
   render() {
+    setupFontAwesome();
     return (
       <React.Fragment>
-        <FontAwesome />
         <ThemeProvider theme={theme}>{this.props.children}</ThemeProvider>
       </React.Fragment>
     );

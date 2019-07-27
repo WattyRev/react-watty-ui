@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { ReactComponent as DualLine } from "./dual-line.svg";
-import { ReactComponent as QuadLine } from "./quad-line.svg";
+import DualLine from "./dual-line";
+import QuadLine from "./quad-line";
 
 const k1Animation = keyframes`
   0% {

@@ -5,10 +5,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "@fortawesome/react-fontawesome": "^0.1.4"
   },
   "scripts": {
     "start": "npx styleguidist server",
@@ -48,8 +45,10 @@
     ]
   },
   "peerDependencies": {
-    "styled-components": "> 4.3.2",
-    "prop-types": "> 15.7.2"
+    "react": ">= 16.8.6",
+    "react-dom": ">= 16.8.6",
+    "styled-components": ">= 4.3.2",
+    "prop-types": ">= 15.7.2"
   },
   "devDependencies": {
     "enzyme": "^3.10.0",
@@ -58,6 +57,9 @@
     "jest-enzyme": "^7.0.2",
     "jest-styled-components": "^6.3.3",
     "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
     "react-styleguidist": "^9.1.11",
     "styled-components": "^4.3.2"
   }
