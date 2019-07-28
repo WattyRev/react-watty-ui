@@ -29,7 +29,7 @@ describe("ModalConfirm", () => {
       </ModalConfirm>
     );
     wrapper.find(".target").simulate("click");
-    expect(wrapper.find(Modal).prop("isOpen")).toEqual(true);
+    expect(wrapper.find(Modal).prop("isOpen")).toStrictEqual(true);
   });
   it("closes the modal when clicking on the cancel button", () => {
     expect.assertions(1);
@@ -44,7 +44,7 @@ describe("ModalConfirm", () => {
     );
     wrapper.find(".target").simulate("click");
     wrapper.find('[data-test-id="cancel"]').simulate("click");
-    expect(wrapper.find(Modal).prop("isOpen")).toEqual(false);
+    expect(wrapper.find(Modal).prop("isOpen")).toStrictEqual(false);
   });
   it("triggers onCancel when clicking on the cancel button", () => {
     expect.assertions(1);
@@ -75,7 +75,7 @@ describe("ModalConfirm", () => {
     );
     wrapper.find(".target").simulate("click");
     wrapper.find('[data-test-id="confirm"]').simulate("click");
-    expect(wrapper.find(Modal).prop("isOpen")).toEqual(false);
+    expect(wrapper.find(Modal).prop("isOpen")).toStrictEqual(false);
   });
   it("triggers onConfirm when clicking on the confirm button", () => {
     expect.assertions(1);
@@ -105,6 +105,6 @@ describe("ModalConfirm", () => {
     );
     wrapper.find(".target").simulate("click");
     wrapper.find(Modal).prop("onBackdropClick")();
-    expect(wrapper.find(Modal).prop("isOpen")).toEqual(false);
+    expect(wrapper.find(Modal).prop("isOpen")).toStrictEqual(false);
   });
 });

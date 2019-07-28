@@ -9,7 +9,7 @@ const BlockListItem = styled.div`
   display: block;
   border-bottom: 1px solid
     ${props =>
-      props.isLight ? props.theme.colors.grayDark : props.theme.colors.gray};
+    props.isLight ? props.theme.colors.grayDark : props.theme.colors.gray};
   color: ${props =>
     props.isLight ? props.theme.colors.silver : props.theme.colors.black};
   white-space: nowrap;

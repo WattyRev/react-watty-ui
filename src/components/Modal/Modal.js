@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
-import BodyPortal from "../utilities/BodyPortal";
+import bodyPortal from "../utilities/bodyPortal";
 
 const backdropAnimation = keyframes`
   0% {
@@ -65,10 +65,10 @@ export const StyledModal = styled.div`
 const Modal = ({ children, isOpen, onBackdropClick }) => (
   <React.Fragment>
     {isOpen && (
-      <BodyPortal>
+      <bodyPortal>
         <ModalBackdrop onClick={onBackdropClick} className="testing_backdrop" />
         <StyledModal className="testing_modal">{children}</StyledModal>
-      </BodyPortal>
+      </bodyPortal>
     )}
   </React.Fragment>
 );

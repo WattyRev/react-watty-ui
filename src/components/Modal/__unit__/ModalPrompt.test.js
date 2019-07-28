@@ -38,7 +38,7 @@ describe("ModelPrompt", () => {
         )}
       </ModalPrompt>
     );
-    expect(wrapper.find(".target").text()).toEqual("closed");
+    expect(wrapper.find(".target").text()).toStrictEqual("closed");
   });
   it("opens a modal when the target is clicked", () => {
     expect.assertions(1);
@@ -52,7 +52,7 @@ describe("ModelPrompt", () => {
       </ModalPrompt>
     );
     wrapper.find(".target").simulate("click");
-    expect(wrapper.find(".target").text()).toEqual("open");
+    expect(wrapper.find(".target").text()).toStrictEqual("open");
   });
   it("Closes the modal when clicking on the cancel button", () => {
     expect.assertions(1);
@@ -67,7 +67,7 @@ describe("ModelPrompt", () => {
     );
     wrapper.find(".target").simulate("click");
     wrapper.find('[data-test-id="cancel"]').simulate("click");
-    expect(wrapper.find(".target").text()).toEqual("closed");
+    expect(wrapper.find(".target").text()).toStrictEqual("closed");
   });
   it("Closes the modal when clicking on the backdrop", () => {
     expect.assertions(1);
@@ -82,7 +82,7 @@ describe("ModelPrompt", () => {
     );
     wrapper.find(".target").simulate("click");
     wrapper.find(Modal).prop("onBackdropClick")();
-    expect(wrapper.find(".target").text()).toEqual("closed");
+    expect(wrapper.find(".target").text()).toStrictEqual("closed");
   });
   it("submits with the value and closes the modal", () => {
     expect.assertions(3);
@@ -105,7 +105,7 @@ describe("ModelPrompt", () => {
       preventDefault: jest.fn()
     });
     expect(defaultProps.onSubmit).toHaveBeenCalled();
-    expect(defaultProps.onSubmit.mock.calls[0][0]).toEqual("boogers");
-    expect(wrapper.find(".target").text()).toEqual("closed");
+    expect(defaultProps.onSubmit.mock.calls[0][0]).toStrictEqual("boogers");
+    expect(wrapper.find(".target").text()).toStrictEqual("closed");
   });
 });

@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable */
 
 const Client = require("ssh2-sftp-client");
 const fs = require("fs");

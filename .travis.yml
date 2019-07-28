@@ -14,13 +14,13 @@ jobs:
     # Run tests with coverage
     - stage: test/build
       script:
-        - npm run test -- --coverage
+        - npm run test:coverage
         - npm run build:styleguide
 
     # Build and deploy to production
     - stage: test/build/deploy
       script:
-        - npm run test -- --coverage
+        - npm run test:coverage
         - npm run build:styleguide
         - SFTP_USER=${SFTP_USER} SFTP_PASS=${SFTP_PASS} SFTP_HOST=${SFTP_HOST} npm run deploy
 notifications:

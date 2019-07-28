@@ -26,7 +26,7 @@ describe("FillToBottom", () => {
   describe("#fillToBottom", () => {
     let defaultProps;
     beforeEach(() => {
-      defaultProps = Object.assign({}, FillToBottom.defaultProps);
+      defaultProps = { ...FillToBottom.defaultProps };
     });
     it("sets the height correctly", () => {
       expect.assertions(1);
@@ -44,7 +44,7 @@ describe("FillToBottom", () => {
 
       subject.fillToBottom();
 
-      expect(subject.setState.mock.calls[0][0]).toEqual({ height: 900 });
+      expect(subject.setState.mock.calls[0][0]).toStrictEqual({ height: 900 });
     });
     it("does nothing if the element extends below the window and strict is false", () => {
       expect.assertions(1);
@@ -82,7 +82,7 @@ describe("FillToBottom", () => {
 
       subject.fillToBottom();
 
-      expect(subject.setState.mock.calls[0][0]).toEqual({ height: 400 });
+      expect(subject.setState.mock.calls[0][0]).toStrictEqual({ height: 400 });
     });
     it("sets the height to the minHeight if the element would be too small", () => {
       expect.assertions(1);
@@ -101,7 +101,7 @@ describe("FillToBottom", () => {
 
       subject.fillToBottom();
 
-      expect(subject.setState.mock.calls[0][0]).toEqual({ height: 1000 });
+      expect(subject.setState.mock.calls[0][0]).toStrictEqual({ height: 1000 });
     });
   });
 });

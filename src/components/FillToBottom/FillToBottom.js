@@ -30,25 +30,27 @@ class FillToBottom extends React.Component {
      * content that is below the fill-to-bottom that we want to make room for. A value of 5 will
      * make the FillToBottom extend down until it is 5px away from the edge of the screen.
      */
-    offset: PropTypes.number.isRequired,
+    offset: PropTypes.number,
     /**
      * If set to true, fill-to-bottom will make itself smaller if necessary, to stay at the bottom
      * of the screen.
      * If false, fill-to-bottom will only make the element larger, not smaller.
      * @type {[type]}
      */
-    strict: PropTypes.bool.isRequired,
+    strict: PropTypes.bool,
     /**
      * The minimum height (px) that the element can be.
      */
-    minHeight: PropTypes.number.isRequired,
+    minHeight: PropTypes.number,
     children: PropTypes.node
   };
+
   static defaultProps = {
     offset: 0,
     strict: false,
     minHeight: 0
   };
+
   state = {
     height: null
   };
@@ -103,7 +105,9 @@ class FillToBottom extends React.Component {
     return (
       <StyleWrapper
         height={this.state.height}
-        ref={wrapper => (this.wrapper = wrapper)}
+        ref={wrapper => {
+          this.wrapper = wrapper;
+        }}
       >
         {this.props.children}
       </StyleWrapper>

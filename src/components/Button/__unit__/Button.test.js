@@ -17,7 +17,7 @@ describe("Button", () => {
           button
         </Button>
       );
-      expect(wrapper.hasClass("is-primary")).toEqual(true);
+      expect(wrapper.hasClass("is-primary")).toStrictEqual(true);
     });
     it("does not use the is-primary class when isPrimary is true", () => {
       expect.assertions(1);
@@ -26,7 +26,7 @@ describe("Button", () => {
           button
         </Button>
       );
-      expect(wrapper.hasClass("is-primary")).toEqual(false);
+      expect(wrapper.hasClass("is-primary")).toStrictEqual(false);
     });
   });
   describe("isBlock", () => {
@@ -37,7 +37,7 @@ describe("Button", () => {
           button
         </Button>
       );
-      expect(wrapper.hasClass("is-block")).toEqual(true);
+      expect(wrapper.hasClass("is-block")).toStrictEqual(true);
     });
     it("does not use the is-block class when isBlock is true", () => {
       expect.assertions(1);
@@ -46,7 +46,7 @@ describe("Button", () => {
           button
         </Button>
       );
-      expect(wrapper.hasClass("is-block")).toEqual(false);
+      expect(wrapper.hasClass("is-block")).toStrictEqual(false);
     });
   });
 });

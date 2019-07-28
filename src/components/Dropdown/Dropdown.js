@@ -66,12 +66,21 @@ class Dropdown extends React.Component {
      */
     dropdownContent: PropTypes.func.isRequired
   };
+
   state = {
     /**
      * Indicates if the dropdown is open or not
      */
     isOpen: false
   };
+
+  componentDidMount() {
+    document.addEventListener("click", this.autoClose);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("click", this.autoClose);
+  }
 
   /**
    * Based on the provided event, close the dropdown if the event happened outside this component.
@@ -87,14 +96,6 @@ class Dropdown extends React.Component {
     }
     this.close();
   };
-
-  componentDidMount() {
-    document.addEventListener("click", this.autoClose);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("click", this.autoClose);
-  }
 
   /**
    * Opens the dropdown
@@ -129,7 +130,11 @@ class Dropdown extends React.Component {
       }
     };
     return (
-      <StyleWrapper ref={node => (this.node = node)}>
+      <StyleWrapper
+        ref={node => {
+          this.node = node;
+        }}
+      >
         {this.props.children(renderData)}
         {this.state.isOpen && (
           <StyledDropdown>

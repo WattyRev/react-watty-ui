@@ -114,7 +114,7 @@ describe("Tooltip", () => {
     });
     expect(wrapper.find(".testing_tooltip")).toHaveLength(1);
   });
-  it("removes the tooltip when the mouse leaves the icon", () => {
+  it("removes the tooltip when the mouse leaves the icon", async () => {
     expect.assertions(3);
     const wrapper = shallow(<Tooltip fadeSpeedMs={1}>hello</Tooltip>);
     const icon = wrapper.find(TooltipIcon);
@@ -129,7 +129,7 @@ describe("Tooltip", () => {
     expect(wrapper.find(".testing_tooltip")).toHaveLength(1);
     icon.simulate("mouseLeave", {});
     expect(wrapper.find(".testing_tooltip")).toHaveLength(1);
-    return new Promise(resolve => {
+    await new Promise(resolve => {
       window.setTimeout(() => {
         expect(wrapper.find(".testing_tooltip")).toHaveLength(0);
         resolve();

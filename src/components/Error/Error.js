@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { Icon } from "../../index";
 
 const StyledError = styled.div`
@@ -24,6 +25,14 @@ const Error = ({ children, ...props }) => (
     <div>{children}</div>
   </StyledError>
 );
+
+Error.propTypes = {
+  children: PropTypes.node
+};
+
+Error.defaultProps = {
+  children: null
+};
 
 /** @component */
 export default Error;

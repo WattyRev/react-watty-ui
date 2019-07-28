@@ -50,7 +50,8 @@ describe("Alert", () => {
   });
   describe("StyledAlert", () => {
     it("renders", () => {
-      mount(<StyledAlert theme={theme} />);
+      const wrapper = mount(<StyledAlert theme={theme} />);
+      expect(wrapper).toBeDefined();
     });
     it("has a reasonable max height, and no transform by default", () => {
       const wrapper = mount(<StyledAlert theme={theme} />);
@@ -58,7 +59,9 @@ describe("Alert", () => {
       expect(wrapper).not.toHaveStyleRule(
         "transform",
         expect.stringContaining(""),
-        { modifier: "> div" }
+        {
+          modifier: "> div"
+        }
       );
     });
     it("has a 0 max-height and a transform when removing", () => {
@@ -67,7 +70,9 @@ describe("Alert", () => {
       expect(wrapper).toHaveStyleRule(
         "transform",
         expect.stringContaining(""),
-        { modifier: "> div" }
+        {
+          modifier: "> div"
+        }
       );
     });
     it("shows a red stripe when alertType is error", () => {
@@ -90,7 +95,7 @@ describe("Alert", () => {
     });
   });
 
-  let originalError = console.error;
+  const originalError = console.error;
   beforeEach(() => {
     console.error = jest.fn();
   });
@@ -99,7 +104,8 @@ describe("Alert", () => {
     console.error = originalError;
   });
   it("renders", () => {
-    shallow(<Alert />);
+    const wrapper = shallow(<Alert />);
+    expect(wrapper).toBeDefined();
   });
   it("logs an error if kp_alert is already defined", () => {
     expect.assertions(1);
@@ -115,13 +121,13 @@ describe("Alert", () => {
   it("defined kp_alert", () => {
     expect.assertions(1);
     shallow(<Alert />);
-    expect(typeof window.kp_alert).toEqual("function");
+    expect(typeof window.kp_alert).toStrictEqual("function");
   });
   it("removes kp_alert wyhen unmounted", () => {
     expect.assertions(1);
     const wrapper = shallow(<Alert />);
     wrapper.unmount();
-    expect(window.kp_alert).toEqual(undefined);
+    expect(window.kp_alert).toStrictEqual(undefined);
   });
   it("logs an error if kp_alert is called with no message", () => {
     expect.assertions(1);
@@ -169,29 +175,12 @@ describe("Alert", () => {
     expect.assertions(2);
     const wrapper = shallow(<Alert />);
     expect(wrapper.find(StyledAlert)).toHaveLength(0);
-    window.kp_alert({
-      message: "stuff",
-      type: "success"
-    });
-    expect(wrapper.find(StyledAlert)).toHaveLength(1);
-  });
-  it("removes the alert from the UI once it times out", () => {
-    expect.assertions(2);
-    const wrapper = shallow(<Alert />);
-    expect(wrapper.find(StyledAlert)).toHaveLength(0);
-    return window
+    window
       .kp_alert({
         message: "stuff",
-        type: "success",
-        duration: 0
+        type: "success"
       })
-      .then(() => {
-        return new Promise(resolve => {
-          window.setTimeout(() => {
-            expect(wrapper.find(StyledAlert)).toHaveLength(0);
-            resolve();
-          }, 2000);
-        });
-      });
+      .catch(() => {});
+    expect(wrapper.find(StyledAlert)).toHaveLength(1);
   });
 });
