@@ -20,12 +20,13 @@
     "start": "npx styleguidist server",
     "test": "react-scripts test",
     "preversion": "CI=true npm test && npm run build",
-    "postversion": "npm run changelog && git push && git push --tags && npm publish",
+    "postversion": "npm run changelog && git push && git push --tags",
     "build": "NODE_ENV=production npx babel src -d dist --ignore \"src/**/*.test.js\",\"src/styleguide/*\",\"src/setupTests.js\"",
     "build:styleguide": "npx styleguidist build",
     "eject": "react-scripts eject",
     "deploy": "npm run build && SFTP_PATH=./public_html/react-watty-ui/ node sftp-deployment.js",
-    "changelog": "auto-changelog && git add CHANGELOG.md && git commit -m \"Update changelog\""
+    "changelog": "auto-changelog && git add CHANGELOG.md && git commit -m \"Update changelog\"",
+    "publishBranch": "branch=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD); npm version prepatch && npm publish --tag $branch"
   },
   "browserslist": {
     "production": [
@@ -70,8 +71,8 @@
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "babel-plugin-styled-components": "^1.10.0",
+    "babel-preset-zillow": "^4.0.3",
     "auto-changelog": "^1.14.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
