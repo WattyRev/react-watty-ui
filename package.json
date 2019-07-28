@@ -18,11 +18,18 @@
   },
   "scripts": {
     "start": "npx styleguidist server",
+    "test": "react-scripts test",
+    "preversion": "npm test && npm run build && npm run changelog",
+    "postversion": "git push && git push --tags",
     "build": "NODE_ENV=production npx babel src -d dist --ignore \"src/**/*.test.js\",\"src/styleguide/*\",\"src/setupTests.js\"",
     "build:styleguide": "npx styleguidist build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && SFTP_PATH=./public_html/react-watty-ui/ node sftp-deployment.js"
+    "deploy": "npm run build && SFTP_PATH=./public_html/react-watty-ui/ node sftp-deployment.js",
+    "changelog": "auto-changelog && git add CHANGELOG.md"
+  },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "compact"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -64,6 +71,7 @@
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "auto-changelog": "^1.14.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest-environment-enzyme": "^7.0.2",
