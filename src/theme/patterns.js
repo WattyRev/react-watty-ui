@@ -13,3 +13,11 @@ export const transparencyBackground = css`
   background-size: 20px 20px;
   background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
 `;
+
+export const clearfix = css`
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+`;
