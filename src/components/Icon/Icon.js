@@ -24,7 +24,8 @@ import {
   faSpinner,
   faUndo,
   faTimes,
-  faTrash
+  faTrash,
+  faUser
 } from "@fortawesome/free-solid-svg-icons";
 
 export function setupFontAwesome() {
@@ -50,7 +51,8 @@ export function setupFontAwesome() {
     faSpinner,
     faUndo,
     faTimes,
-    faTrash
+    faTrash,
+    faUser
   );
 }
 
@@ -76,7 +78,8 @@ export const ICON_NAMES = [
   "spinner",
   "undo",
   "times",
-  "trash"
+  "trash",
+  "user"
 ];
 
 const Icon = props => <FontAwesomeIcon {...props} />;
