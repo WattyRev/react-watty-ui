@@ -14,6 +14,9 @@ export const transparencyBackground = css`
   background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
 `;
 
+/**
+ * Adds clearfixing for any float elements.
+ */
 export const clearfix = css`
   &:after {
     clear: both;
