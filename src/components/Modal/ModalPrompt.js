@@ -126,7 +126,9 @@ class ModalPrompt extends React.Component {
               <Label>{this.props.message}</Label>
               <Input
                 type={this.props.inputType}
-                ref={input => (this.promptInput = input)}
+                ref={input => {
+                  this.promptInput = input;
+                }}
                 data-test-id="prompt-value"
                 value={this.state.value}
                 onChange={this.handleValueChange}

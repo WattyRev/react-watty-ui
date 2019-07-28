@@ -1,11 +1,19 @@
 module.exports = {
-  presets: [["zillow", { modules: false }]],
+  presets: [
+    [
+      'zillow',
+      {
+        modules: false,
+      },
+    ],
+  ],
+  plugins: ['@babel/plugin-proposal-export-default-from'],
   env: {
     cjs: {
-      presets: ["zillow"]
+      presets: ['zillow'],
     },
     test: {
-      presets: ["zillow"]
-    }
-  }
+      presets: ['zillow'],
+    },
+  },
 };

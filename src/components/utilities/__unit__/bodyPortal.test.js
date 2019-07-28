@@ -1,16 +1,16 @@
 import React from "react";
 import { shallow } from "enzyme";
-import BodyPortal from "../BodyPortal";
+import bodyPortal from "../bodyPortal";
 
 jest.mock("react-dom");
 
-describe("BodyPortal", () => {
+describe("bodyPortal", () => {
   it("renders", () => {
     expect.assertions(1);
     const wrapper = shallow(
-      <BodyPortal>
+      <bodyPortal>
         <div>test</div>
-      </BodyPortal>
+      </bodyPortal>
     );
     expect(wrapper).toMatchSnapshot();
   });

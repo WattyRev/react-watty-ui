@@ -1,9 +1,13 @@
-// styleguide.config.js
-const path = require("path");
-module.exports = {
-  styleguideComponents: {
-    Wrapper: path.join(__dirname, "src/styleguide/ThemeWrapper")
-  },
-  skipComponentsWithoutExample: true,
-  ignore: ["**/dual-line.js", "**/quad-line.js"]
-};
+const path = require('path');
+const { createStyleguideConfig } = require('create-react-styleguide');
+
+module.exports = createStyleguideConfig({
+    /* your own config shallowly merged */
+    sections: [{
+        name: 'Introduction',
+        content: 'docs/introduction.md'
+    }],
+    styleguideComponents: {
+        Wrapper: path.join(__dirname, 'src/styleguidist/ThemeWrapper'),
+    },
+});

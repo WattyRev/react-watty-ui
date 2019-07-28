@@ -1,0 +1,16 @@
+{
+  "extends": ["plugin:zillow/recommended", "plugin:zillow/jest"],
+  "globals": {
+    "document": "readonly",
+    "window": "readonly"
+  },
+  "rules": {
+    "zillow/import/prefer-default-export": "off",
+    "zillow/jest/expect-expect": "warn",
+    "zillow/jsx-a11y/click-events-have-key-events": "off",
+    "zillow/jsx-a11y/no-static-element-interactions": "off",
+    "zillow/react/no-access-state-in-setstate": "off",
+    "zillow/prettier/prettier": "off",
+    "indent": ["error", 2],
+  }
+}

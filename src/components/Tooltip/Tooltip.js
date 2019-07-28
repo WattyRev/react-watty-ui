@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import PropTypes from "prop-types";
-import BodyPortal from "../utilities/BodyPortal";
+import bodyPortal from "../utilities/bodyPortal";
 import { Text, Icon } from "../../index";
 
 export const fadeIn = keyframes`
@@ -86,17 +86,19 @@ class Tooltip extends React.Component {
   static defaultProps = {
     fadeSpeedMs: 250
   };
+
   static propTypes = {
     /**
      * The speed of the fade animation in milliseconds.
      */
-    fadeSpeedMs: PropTypes.number.isRequired,
+    fadeSpeedMs: PropTypes.number,
 
     /**
      * The content to be displayed in the tooltip
      */
     children: PropTypes.node.isRequired
   };
+
   state = {
     /**
      * Indicates if the tooltip should be rendered to the dom.
@@ -120,16 +122,16 @@ class Tooltip extends React.Component {
   };
 
   /**
+   * The stored fade out timer. Allows for cancellation.
+   */
+  fadeTimer = null;
+
+  /**
    * Clean up any pending timeouts when unmounting.
    */
   componentWillUnmount() {
     window.clearTimeout(this.fadeTimer);
   }
-
-  /**
-   * The stored fade out timer. Allows for cancellation.
-   */
-  fadeTimer = null;
 
   /**
    * Displays the tooltip when the info icon is hovered over.
@@ -171,7 +173,7 @@ class Tooltip extends React.Component {
           <Icon icon="info" />
         </TooltipIcon>
         {this.state.renderTooltip && (
-          <BodyPortal>
+          <bodyPortal>
             <StyleWrapper
               className="testing_tooltip"
               top={this.state.top}
@@ -182,7 +184,7 @@ class Tooltip extends React.Component {
             >
               <TooltipText>{this.props.children}</TooltipText>
             </StyleWrapper>
-          </BodyPortal>
+          </bodyPortal>
         )}
       </React.Fragment>
     );

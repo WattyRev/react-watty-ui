@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { TYPOGRAPHY_STYLES } from "../Text/Text";
 import PropTypes from "prop-types";
+import { TYPOGRAPHY_STYLES } from "../Text/Text";
 
 const StyledButton = styled.button`
   ${TYPOGRAPHY_STYLES};
