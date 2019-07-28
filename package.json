@@ -25,7 +25,6 @@
     "test:update": "create-react-styleguide script test:update",
     "test:watch": "create-react-styleguide script test:watch",
     "prepublishOnly": "create-react-styleguide script prepublishOnly",
-    "preversion": "npm test && npm run build",
     "postversion": "npm run changelog && git push && git push --tags",
     "deploy": "npm run build && SFTP_PATH=./public_html/react-watty-ui/ node sftp-deployment.js",
     "changelog": "auto-changelog && git add CHANGELOG.md && git commit -m \"Update changelog\"",
