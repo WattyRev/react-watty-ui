@@ -19,8 +19,8 @@
   "scripts": {
     "start": "npx styleguidist server",
     "test": "react-scripts test",
-    "preversion": "CI=true npm test && npm run build && npm run changelog",
-    "postversion": "git push && git push --tags",
+    "preversion": "CI=true npm test && npm run build",
+    "postversion": "npm run changelog && git push && git push --tags && npm publish",
     "build": "NODE_ENV=production npx babel src -d dist --ignore \"src/**/*.test.js\",\"src/styleguide/*\",\"src/setupTests.js\"",
     "build:styleguide": "npx styleguidist build",
     "eject": "react-scripts eject",
