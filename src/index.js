@@ -26,7 +26,7 @@ import Spacer from "./components/Spacer/Spacer";
 import Text, { TYPOGRAPHY_STYLES } from "./components/Text/Text";
 import TextButton from "./components/TextButton/TextButton";
 import Tile from "./components/Tile/Tile";
-// import Tooltip from "./components/Tooltip/Tooltip";
+import Tooltip from "./components/Tooltip/Tooltip";
 
 const Theme = { colors, media, patterns };
 export default Theme;
@@ -62,6 +62,6 @@ export {
   Text,
   TYPOGRAPHY_STYLES,
   TextButton,
-  Tile
-  // Tooltip
+  Tile,
+  Tooltip
 };
