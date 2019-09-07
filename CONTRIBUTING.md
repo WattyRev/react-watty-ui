@@ -25,3 +25,9 @@
 - `npm run build` will build the component for publishing to npm and also bundle the demo app.
 
 - `npm run clean` will delete built resources.
+
+## Publishing
+
+Feature branches can be published by running `npm run publishBranch`. This will create a new version tagged with your branch name.
+
+Create a new latest version by running `npm version {versionType} && npm publish` in master branch.
