@@ -9,6 +9,4 @@ See the git repository [here](https://github.com/WattyRev/react-watty-ui).
 
 # Installation
 
-```
-npm install --save react-watty-ui
-```
+`npm install --save react-watty-ui`
