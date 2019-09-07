@@ -11,6 +11,7 @@ export const TYPOGRAPHY_STYLES = `
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 16px;
+  white-space: normal;
 `;
 
 const Text = styled.p`
