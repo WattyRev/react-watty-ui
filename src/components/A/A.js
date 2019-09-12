@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { TYPOGRAPHY_STYLES } from "../Text/Text";
 
 /**
- * A styled `<a>` element. Passes all props directly to the <a> element.
+ * A styled `<a>` element. Passes all props directly to the `<a>` element.
  */
 const A = styled.a`
   ${TYPOGRAPHY_STYLES};
