@@ -27,6 +27,7 @@ export TableCell from "./components/Table/TableCell";
 export TableHeading from "./components/Table/TableHeading";
 export TableRow from "./components/Table/TableRow";
 export Text, { TYPOGRAPHY_STYLES } from "./components/Text/Text";
+export Textarea from "./components/Textarea/Textarea";
 export TextButton from "./components/TextButton/TextButton";
 export Tile from "./components/Tile/Tile";
 export Tooltip from "./components/Tooltip/Tooltip";
