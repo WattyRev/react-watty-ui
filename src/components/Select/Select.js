@@ -12,7 +12,7 @@ export const SelectWrapper = styled.div`
     display: block;
     background: transparent;
     width: 100%;
-    padding: 4px;
+    padding: 4px 20px 4px 4px;
     border-radius: 4px;
     border: 1px solid ${({ theme }) => theme.colors.gray};
     box-sizing: border-box;
