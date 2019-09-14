@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import PropTypes from "prop-types";
-import bodyPortal from "../utilities/bodyPortal";
+import BodyPortal from "../../utils/BodyPortal";
 import { Text, Icon } from "../../index";
 
 export const fadeIn = keyframes`
@@ -173,7 +173,7 @@ class Tooltip extends React.Component {
           <Icon icon="info" />
         </TooltipIcon>
         {this.state.renderTooltip && (
-          <bodyPortal>
+          <BodyPortal>
             <StyleWrapper
               className="testing_tooltip"
               top={this.state.top}
@@ -184,7 +184,7 @@ class Tooltip extends React.Component {
             >
               <TooltipText>{this.props.children}</TooltipText>
             </StyleWrapper>
-          </bodyPortal>
+          </BodyPortal>
         )}
       </React.Fragment>
     );
