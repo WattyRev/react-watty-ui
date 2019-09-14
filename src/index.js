@@ -4,6 +4,7 @@ export A from "./components/A/A";
 export Alert, { success, warn, error } from "./components/Alert/Alert";
 export BlockListItem from "./components/BlockListItem/BlockListItem";
 export Button from "./components/Button/Button";
+export DatePicker from "./components/DatePicker/DatePicker";
 export Dropdown from "./components/Dropdown/Dropdown";
 export Error from "./components/Error/Error";
 export FillToBottom from "./components/FillToBottom/FillToBottom";
