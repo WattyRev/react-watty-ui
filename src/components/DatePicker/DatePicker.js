@@ -23,4 +23,5 @@ const DatePicker = styled(RawDatePicker)`
   }
 `;
 
+/** @component */
 export default DatePicker;
