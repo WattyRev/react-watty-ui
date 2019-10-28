@@ -13,11 +13,12 @@ const StyleWrapper = styled.span`
 export const StyledDropdown = styled.span`
   position: absolute;
   top: calc(100% + 4px);
-  ${({ align }) => (align === "right" ? "right: 0px;" : "left: 0px")};
+  ${({ align }) => (align === "right" ? "right: 0px;" : "left: 0px;")};
   background: ${props => props.theme.colors.white};
   border-radius: 4px;
   border: 1px solid ${props => props.theme.colors.gray};
-  text-align: right;
+  ${({ align }) =>
+    align === "right" ? "text-align: right;" : "text-align: left;"};
   box-shadow: 0px 2px 2px -1px ${props => props.theme.colors.grayDarker};
 `;
 
