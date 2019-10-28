@@ -129,17 +129,17 @@ class Dropdown extends React.Component {
         Spacer
       }
     };
+    const { children, dropdownContent, ...props } = this.props;
     return (
       <StyleWrapper
         ref={node => {
           this.node = node;
         }}
+        {...props}
       >
-        {this.props.children(renderData)}
+        {children(renderData)}
         {this.state.isOpen && (
-          <StyledDropdown>
-            {this.props.dropdownContent(renderData)}
-          </StyledDropdown>
+          <StyledDropdown>{dropdownContent(renderData)}</StyledDropdown>
         )}
       </StyleWrapper>
     );
