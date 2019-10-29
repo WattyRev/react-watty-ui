@@ -12,5 +12,6 @@
     "zillow/react/no-access-state-in-setstate": "off",
     "zillow/prettier/prettier": "off",
     "indent": ["error", 2],
+    "no-confusing-arrow": "off"
   }
 }

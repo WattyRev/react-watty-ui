@@ -5,14 +5,15 @@ import Dropdown, { StyledDropdown, Item, Spacer } from "../Dropdown";
 
 describe("Dropdown", () => {
   it("renders", () => {
-    shallow(
+    const wrapper = shallow(
       <Dropdown dropdownContent={() => <div>test</div>}>
         {() => <div>test2</div>}
       </Dropdown>
     );
+    expect(wrapper).toBeDefined();
   });
   it("renders when using the provided components", () => {
-    shallow(
+    const wrapper = shallow(
       <Dropdown dropdownContent={() => <div>test</div>}>
         {data => (
           <React.Fragment>
@@ -22,6 +23,7 @@ describe("Dropdown", () => {
         )}
       </Dropdown>
     );
+    expect(wrapper).toBeDefined();
   });
   it("renders the dropdown content when open is triggered", () => {
     expect.assertions(2);
@@ -85,15 +87,6 @@ describe("Dropdown", () => {
     expect(wrapper.find(".target")).toHaveLength(0);
   });
 
-  it("unmounts successfully", () => {
-    const wrapper = shallow(
-      <Dropdown dropdownContent={() => <div>test</div>}>
-        {() => <div>test2</div>}
-      </Dropdown>
-    );
-    wrapper.unmount();
-  });
-
   describe("#autoClose", () => {
     it("does not close the dropdown is it is not open", () => {
       expect.assertions(1);
@@ -139,13 +132,33 @@ describe("Dropdown", () => {
 
   describe("StyledDropdown", () => {
     it("renders", () => {
-      mount(<StyledDropdown theme={Theme} />);
+      const wrapper = mount(<StyledDropdown theme={Theme} />);
+      expect(wrapper).toBeDefined();
+    });
+    it("aligns the dropdown and the text if align is set to right", () => {
+      const wrapper = mount(<StyledDropdown theme={Theme} align="right" />);
+      expect(wrapper).toHaveStyleRule("right", "0px");
+      expect(wrapper).not.toHaveStyleRule("left", "0px");
+      expect(wrapper).toHaveStyleRule("text-align", "right");
+    });
+    it("aligns the dropdown and the text to the left if align is set to left", () => {
+      const wrapper = mount(<StyledDropdown theme={Theme} align="left" />);
+      expect(wrapper).not.toHaveStyleRule("right", "0px");
+      expect(wrapper).toHaveStyleRule("left", "0px");
+      expect(wrapper).toHaveStyleRule("text-align", "left");
+    });
+    it("aligns the dropdown and the text to the left if align is not set", () => {
+      const wrapper = mount(<StyledDropdown theme={Theme} />);
+      expect(wrapper).not.toHaveStyleRule("right", "0px");
+      expect(wrapper).toHaveStyleRule("left", "0px");
+      expect(wrapper).toHaveStyleRule("text-align", "left");
     });
   });
 
   describe("Item", () => {
     it("renders", () => {
-      mount(<Item theme={Theme} />);
+      const wrapper = mount(<Item theme={Theme} />);
+      expect(wrapper).toBeDefined();
     });
     it("shows as black with a pointer cursor", () => {
       const wrapper = mount(<Item theme={Theme} />);
@@ -160,7 +173,8 @@ describe("Dropdown", () => {
   });
   describe("Spacer", () => {
     it("renders", () => {
-      mount(<Spacer theme={Theme} />);
+      const wrapper = mount(<Spacer theme={Theme} />);
+      expect(wrapper).toBeDefined();
     });
   });
 });
