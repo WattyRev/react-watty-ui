@@ -25,10 +25,10 @@
     "test:update": "create-react-styleguide script test:update",
     "test:watch": "create-react-styleguide script test:watch",
     "prepublishOnly": "create-react-styleguide script prepublishOnly",
-    "version": "if test \"$BRANCH_VERSION\" != \"true\"; then npm run changelog ; fi",
+    "version": "npm run changelog && git push && git push --tags",
     "deploy": "npm run build && SFTP_PATH=./public_html/react-watty-ui/ node sftp-deployment.js",
     "changelog": "auto-changelog && git add CHANGELOG.md && git commit -m \"Update changelog\"",
-    "publishBranch": "BRANCH_VERSION=true branch=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD); npm version prepatch && npm publish --tag $branch"
+    "publishBranch": "branch=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD); npm version prepatch && npm publish --tag $branch"
   },
   "husky": {
     "hooks": {
