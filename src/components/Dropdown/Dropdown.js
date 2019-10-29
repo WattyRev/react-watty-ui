@@ -13,11 +13,12 @@ const StyleWrapper = styled.span`
 export const StyledDropdown = styled.span`
   position: absolute;
   top: calc(100% + 4px);
-  right: 0;
+  ${({ align }) => (align === "right" ? "right: 0px;" : "left: 0px;")};
   background: ${props => props.theme.colors.white};
   border-radius: 4px;
   border: 1px solid ${props => props.theme.colors.gray};
-  text-align: right;
+  ${({ align }) =>
+    align === "right" ? "text-align: right;" : "text-align: left;"};
   box-shadow: 0px 2px 2px -1px ${props => props.theme.colors.grayDarker};
 `;
 
@@ -56,6 +57,10 @@ export const Spacer = styled.div`
  * absolutely positionined dropdown.
  */
 class Dropdown extends React.Component {
+  static defaultProps = {
+    align: "right"
+  };
+
   static propTypes = {
     /**
      * The persistent content that the dropdown is bound to.
@@ -64,7 +69,11 @@ class Dropdown extends React.Component {
     /**
      * The contents of the dropdown
      */
-    dropdownContent: PropTypes.func.isRequired
+    dropdownContent: PropTypes.func.isRequired,
+    /**
+     * How should the dropdown align itself?
+     */
+    align: PropTypes.oneOf(["right", "left"])
   };
 
   state = {
@@ -129,16 +138,18 @@ class Dropdown extends React.Component {
         Spacer
       }
     };
+    const { children, dropdownContent, align, ...props } = this.props;
     return (
       <StyleWrapper
         ref={node => {
           this.node = node;
         }}
+        {...props}
       >
-        {this.props.children(renderData)}
+        {children(renderData)}
         {this.state.isOpen && (
-          <StyledDropdown>
-            {this.props.dropdownContent(renderData)}
+          <StyledDropdown align={align}>
+            {dropdownContent(renderData)}
           </StyledDropdown>
         )}
       </StyleWrapper>
