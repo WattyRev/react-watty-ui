@@ -20,6 +20,7 @@ export const StyledDropdown = styled.span`
   ${({ align }) =>
     align === "right" ? "text-align: right;" : "text-align: left;"};
   box-shadow: 0px 2px 2px -1px ${props => props.theme.colors.grayDarker};
+  z-index: 2;
 `;
 
 /**
