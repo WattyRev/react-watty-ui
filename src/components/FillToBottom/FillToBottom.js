@@ -102,14 +102,16 @@ class FillToBottom extends React.Component {
   };
 
   render() {
+    const { children, ...props } = this.props;
     return (
       <StyleWrapper
         height={this.state.height}
         ref={wrapper => {
           this.wrapper = wrapper;
         }}
+        {...props}
       >
-        {this.props.children}
+        {children}
       </StyleWrapper>
     );
   }

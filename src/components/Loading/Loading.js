@@ -22,8 +22,8 @@ const StyleWrapper = styled.div`
 /**
  * A basic loading spinner
  */
-const Loading = () => (
-  <StyleWrapper>
+const Loading = props => (
+  <StyleWrapper {...props}>
     <Icon icon="spinner" className="spinner" />{" "}
     <Text as="span">Loading...</Text>
   </StyleWrapper>
