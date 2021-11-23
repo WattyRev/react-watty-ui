@@ -1,6 +1,6 @@
 {
   "name": "react-watty-ui",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "description": "react-watty-ui React component",
   "main": "lib/index.js",
   "module": "es/index.js",
