@@ -115,8 +115,8 @@ const StyleWrapper = styled.div`
 /**
  * A large loading indicator for full page loading events.
  */
-const PageLoader = () => (
-  <StyleWrapper>
+const PageLoader = props => (
+  <StyleWrapper {...props}>
     <DualLine className="k1" />
     <QuadLine className="k2" />
     <DualLine className="k3" />
