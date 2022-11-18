@@ -59,7 +59,7 @@
     "auto-changelog": "^1.14.1",
     "babel-plugin-styled-components": "^1.10.6",
     "babel-preset-zillow": "^4.1.0",
-    "create-react-styleguide": "^5.0.0",
+    "create-react-styleguide": "^8.2.3",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint-plugin-jest": "^22.14.0",
